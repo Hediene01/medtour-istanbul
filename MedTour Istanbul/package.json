@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "setup": "corepack enable && corepack prepare pnpm@latest --activate && pnpm install",
+    "start": "pnpm run dev"
   },
   "dependencies": {
     "react": "^19.2.7",

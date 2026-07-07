@@ -65,26 +65,26 @@ function RequestForm({ editingRequest, onCancelEdit, onSubmitRequest, t }) {
   return (
     <section
       id="new-request"
-      className="rounded-3xl border border-slate-200 bg-white p-5 shadow-xl shadow-slate-200/60 sm:p-6 lg:p-8"
+      className="rounded-3xl border border-slate-200/60 bg-gradient-to-br from-white to-slate-50/30 p-5 shadow-lg shadow-slate-200/50 backdrop-blur-sm sm:p-6 lg:p-8"
     >
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-600">
+          <p className="text-sm font-bold uppercase tracking-wider text-teal-600">
             {t.formEyebrow}
           </p>
-          <h2 className="mt-2 text-2xl font-bold text-slate-950">
+          <h2 className="mt-2 text-2xl font-bold bg-gradient-to-r from-slate-950 to-slate-700 bg-clip-text text-transparent">
             {editingRequest ? t.formEditTitle : t.formAddTitle}
           </h2>
         </div>
         {editingRequest && (
-          <span className="rounded-full bg-blue-50 px-3 py-1 text-sm font-semibold text-blue-700">
+          <span className="rounded-full bg-gradient-to-r from-blue-50 to-blue-50/50 px-4 py-1.5 text-sm font-semibold text-blue-700 border border-blue-200/50 shadow-sm">
             {t.editing} {editingRequest.fullName}
           </span>
         )}
       </div>
 
       {error && (
-        <p className="mt-5 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-semibold text-rose-700">
+        <p className="mt-5 rounded-2xl border border-rose-200/60 bg-gradient-to-r from-rose-50 to-rose-50/50 px-4 py-3 text-sm font-semibold text-rose-700 shadow-sm backdrop-blur-sm">
           {error}
         </p>
       )}
@@ -93,7 +93,7 @@ function RequestForm({ editingRequest, onCancelEdit, onSubmitRequest, t }) {
         <label className="grid gap-2 text-sm font-semibold text-slate-700">
           {t.fullName} *
           <input
-            className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-950 outline-none transition focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-100"
+            className="rounded-2xl border border-slate-200/60 bg-white/50 px-4 py-3 text-slate-950 outline-none transition-all duration-200 backdrop-blur-sm focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-100/50 hover:border-slate-300/60"
             name="fullName"
             onChange={handleChange}
             placeholder="Sara Ahmed"
@@ -104,7 +104,7 @@ function RequestForm({ editingRequest, onCancelEdit, onSubmitRequest, t }) {
         <label className="grid gap-2 text-sm font-semibold text-slate-700">
           {t.phone} *
           <input
-            className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-950 outline-none transition focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-100"
+            className="rounded-2xl border border-slate-200/60 bg-white/50 px-4 py-3 text-slate-950 outline-none transition-all duration-200 backdrop-blur-sm focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-100/50 hover:border-slate-300/60"
             name="phone"
             onChange={handleChange}
             placeholder="+90 555 000 00 00"
@@ -115,7 +115,7 @@ function RequestForm({ editingRequest, onCancelEdit, onSubmitRequest, t }) {
         <label className="grid gap-2 text-sm font-semibold text-slate-700">
           {t.country} *
           <input
-            className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-950 outline-none transition focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-100"
+            className="rounded-2xl border border-slate-200/60 bg-white/50 px-4 py-3 text-slate-950 outline-none transition-all duration-200 backdrop-blur-sm focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-100/50 hover:border-slate-300/60"
             name="country"
             onChange={handleChange}
             placeholder="Tunisia"
@@ -126,7 +126,7 @@ function RequestForm({ editingRequest, onCancelEdit, onSubmitRequest, t }) {
         <label className="grid gap-2 text-sm font-semibold text-slate-700">
           {t.appointmentDate} *
           <input
-            className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-950 outline-none transition focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-100"
+            className="rounded-2xl border border-slate-200/60 bg-white/50 px-4 py-3 text-slate-950 outline-none transition-all duration-200 backdrop-blur-sm focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-100/50 hover:border-slate-300/60"
             name="appointmentDate"
             onChange={handleChange}
             type="date"
@@ -137,7 +137,7 @@ function RequestForm({ editingRequest, onCancelEdit, onSubmitRequest, t }) {
         <label className="grid gap-2 text-sm font-semibold text-slate-700">
           {t.service} *
           <select
-            className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-950 outline-none transition focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-100"
+            className="rounded-2xl border border-slate-200/60 bg-white/50 px-4 py-3 text-slate-950 outline-none transition-all duration-200 backdrop-blur-sm focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-100/50 hover:border-slate-300/60"
             name="service"
             onChange={handleChange}
             value={formData.service}
@@ -154,7 +154,7 @@ function RequestForm({ editingRequest, onCancelEdit, onSubmitRequest, t }) {
         <label className="grid gap-2 text-sm font-semibold text-slate-700">
           {t.status} *
           <select
-            className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-950 outline-none transition focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-100"
+            className="rounded-2xl border border-slate-200/60 bg-white/50 px-4 py-3 text-slate-950 outline-none transition-all duration-200 backdrop-blur-sm focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-100/50 hover:border-slate-300/60"
             name="status"
             onChange={handleChange}
             value={formData.status}
@@ -171,7 +171,7 @@ function RequestForm({ editingRequest, onCancelEdit, onSubmitRequest, t }) {
         <label className="grid gap-2 text-sm font-semibold text-slate-700 lg:col-span-2">
           {t.notes}
           <textarea
-            className="min-h-28 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-950 outline-none transition focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-100"
+            className="min-h-28 rounded-2xl border border-slate-200/60 bg-white/50 px-4 py-3 text-slate-950 outline-none transition-all duration-200 backdrop-blur-sm focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-100/50 hover:border-slate-300/60 resize-none"
             name="notes"
             onChange={handleChange}
             placeholder={t.notesPlaceholder}
@@ -181,14 +181,14 @@ function RequestForm({ editingRequest, onCancelEdit, onSubmitRequest, t }) {
 
         <div className="flex flex-col gap-3 sm:flex-row lg:col-span-2">
           <button
-            className="rounded-full bg-teal-600 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-teal-600/20 transition hover:-translate-y-0.5 hover:bg-teal-700"
+            className="rounded-full bg-gradient-to-r from-teal-600 to-teal-700 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-teal-600/30 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-teal-600/40"
             type="submit"
           >
             {editingRequest ? t.saveUpdate : t.addRequest}
           </button>
           {editingRequest && (
             <button
-              className="rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 transition hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50"
+              className="rounded-full border border-slate-200/60 bg-white/70 px-6 py-3 text-sm font-bold text-slate-700 shadow-sm backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300/60 hover:bg-white hover:shadow-md"
               onClick={handleCancel}
               type="button"
             >
@@ -202,3 +202,19 @@ function RequestForm({ editingRequest, onCancelEdit, onSubmitRequest, t }) {
 }
 
 export default RequestForm
+
+/* Add smooth transitions for form inputs */
+if (typeof document !== 'undefined') {
+  const style = document.createElement('style')
+  style.textContent = `
+    input:focus,
+    select:focus,
+    textarea:focus {
+      transition: all 0.2s ease-out;
+    }
+  `
+  if (!document.head.querySelector('style[data-form-animation]')) {
+    style.setAttribute('data-form-animation', 'true')
+    document.head.appendChild(style)
+  }
+}

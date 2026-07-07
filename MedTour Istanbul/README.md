@@ -44,16 +44,38 @@ Each request contains:
 
 ## How To Run Locally
 
-Install dependencies:
+Install dependencies (preferred: pnpm / Corepack). For Windows PowerShell follow the steps below.
 
-```bash
-npm install
+Option 1 — enable Corepack and use `pnpm` (recommended):
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force
+corepack enable
+corepack prepare pnpm@latest --activate
+cd "C:\Users\LENOVO\Documents\New project 2\MedTour Istanbul"
+pnpm install
+pnpm run dev
 ```
 
-Start the development server:
+Option 2 — install `pnpm` via npm and use it:
 
-```bash
-npm run dev
+```powershell
+"C:\Program Files\nodejs\npm.cmd" install -g pnpm
+cd "C:\Users\LENOVO\Documents\New project 2\MedTour Istanbul"
+pnpm install
+pnpm run dev
+```
+
+Option 3 — (not recommended) use `npm` if you don't have pnpm workspaces in your environment. If PowerShell blocks `npm` scripts, run the `npm.cmd` shim or relax the execution policy first:
+
+```powershell
+# use shim to avoid PowerShell .ps1 handling
+"C:\Program Files\nodejs\npm.cmd" install
+"C:\Program Files\nodejs\npm.cmd" run dev
+# or allow signed scripts for the current user then run npm normally
+# Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force
+# npm install
+# npm run dev
 ```
 
 Create a production build:

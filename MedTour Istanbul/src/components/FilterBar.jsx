@@ -7,7 +7,7 @@ function FilterBar({ filters, onFilterChange, onResetFilters, t }) {
       <label className="grid gap-2 text-sm font-semibold text-slate-700">
         {t.status}
         <select
-          className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-950 shadow-sm outline-none transition focus:border-teal-500 focus:ring-4 focus:ring-teal-100"
+          className="rounded-2xl border border-slate-200/60 bg-white/50 px-4 py-3 text-slate-950 shadow-sm outline-none transition-all duration-200 backdrop-blur-sm focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-100/50 hover:border-slate-300/60"
           onChange={(event) => onFilterChange('status', event.target.value)}
           value={filters.status}
         >
@@ -23,7 +23,7 @@ function FilterBar({ filters, onFilterChange, onResetFilters, t }) {
       <label className="grid gap-2 text-sm font-semibold text-slate-700">
         {t.service}
         <select
-          className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-950 shadow-sm outline-none transition focus:border-teal-500 focus:ring-4 focus:ring-teal-100"
+          className="rounded-2xl border border-slate-200/60 bg-white/50 px-4 py-3 text-slate-950 shadow-sm outline-none transition-all duration-200 backdrop-blur-sm focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-100/50 hover:border-slate-300/60"
           onChange={(event) => onFilterChange('service', event.target.value)}
           value={filters.service}
         >
@@ -37,7 +37,7 @@ function FilterBar({ filters, onFilterChange, onResetFilters, t }) {
       </label>
 
       <button
-        className="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-200 hover:text-teal-700"
+        className="rounded-full border border-slate-200/60 bg-white/70 px-5 py-3 text-sm font-bold text-slate-700 shadow-sm backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-teal-200/60 hover:text-teal-700 hover:bg-white hover:shadow-md"
         onClick={onResetFilters}
         type="button"
       >
@@ -48,3 +48,17 @@ function FilterBar({ filters, onFilterChange, onResetFilters, t }) {
 }
 
 export default FilterBar
+
+/* Add smooth transitions for filter controls */
+if (typeof document !== 'undefined') {
+  const style = document.createElement('style')
+  style.textContent = `
+    select:focus {
+      transition: all 0.2s ease-out;
+    }
+  `
+  if (!document.head.querySelector('style[data-filter-animation]')) {
+    style.setAttribute('data-filter-animation', 'true')
+    document.head.appendChild(style)
+  }
+}
