@@ -1,0 +1,4 @@
+[build]
+  base = "MedTour Istanbul"
+  command = "npm run build"
+  publish = "dist"
